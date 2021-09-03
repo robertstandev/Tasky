@@ -34,10 +34,6 @@ public class Tasky
     //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=GETTERS=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
     public static SaveLoadClass saveLoadClass() { return saveLoadClass; }
     public static GUIBuilderClass guiBuilderClass() { return guiBuilderClass; }
-    public static MainWindowClass mainWindow() {
-        return mainWindow;
-    }
-    public static NotificationWindowClass notificationWindow() {
-        return notificationWindow;
-    }
+    public static MainWindowClass mainWindow() { return mainWindow; }
+    public static NotificationWindowClass notificationWindow() { return notificationWindow; }
 }

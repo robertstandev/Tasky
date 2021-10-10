@@ -9,7 +9,6 @@ import java.awt.*;
  * -modified execute now code to work for open file/folder/ etc
  */
 
-//modific locul de salvare de la user.home la user.dir + /Data/ si sa creeze folderul daca nu exista
 
 
 public class Tasky

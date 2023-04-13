@@ -6,7 +6,7 @@ import java.awt.*;
  * -now alarm doesn't disable the rows that must be executed in other days (~)
  *
  * v 1.0.0
- * -modified execute now code to work for open file/folder/ etc
+ * -modified 'execute now' code to work for open file/folder/ etc
  */
 
 

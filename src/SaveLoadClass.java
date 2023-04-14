@@ -69,7 +69,7 @@ public class SaveLoadClass extends Tasky
         File fileLocation = new File(settingsLocation);
         String line;
         String[] parts;
-        ArrayList<String> allSettings = new ArrayList<String>();
+        ArrayList<String> allSettings = new ArrayList<>();
         try
         {
             if(fileLocation.exists())
@@ -134,7 +134,7 @@ public class SaveLoadClass extends Tasky
             BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(fileLocation)));
             while ((line = br.readLine()) != null)
             {
-                parts = line.split("\\ ----- ");
+                parts = line.split(" ----- ");
                 tableModel.addRow(new Object[0]);
                 tableModel.setValueAt(Boolean.valueOf(parts[0]),tableModel.getRowCount()-1,0);
                 tableModel.setValueAt(parts[1],tableModel.getRowCount()-1,1);

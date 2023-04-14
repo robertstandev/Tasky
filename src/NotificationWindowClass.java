@@ -55,8 +55,8 @@ public class NotificationWindowClass extends Tasky
                     {
                         if(mainWindow().getMainWindowTable().getValueAt(i, 0).toString().equals("true"))
                         {
-                            int tableHour = Integer.parseInt(mainWindow().getMainWindowTable().getValueAt(i, 2).toString().split("\\:")[0]);
-                            int tableMinute = Integer.parseInt(mainWindow().getMainWindowTable().getValueAt(i, 2).toString().split("\\:")[1]);
+                            int tableHour = Integer.parseInt(mainWindow().getMainWindowTable().getValueAt(i, 2).toString().split(":")[0]);
+                            int tableMinute = Integer.parseInt(mainWindow().getMainWindowTable().getValueAt(i, 2).toString().split(":")[1]);
 
                             notificationWindowFrame.setAlwaysOnTop(mainWindow().getMainWindowSecondTabTopMostCheckBox());
 
@@ -76,7 +76,7 @@ public class NotificationWindowClass extends Tasky
                             }
                             else
                             {
-                                String reformatDate = mainWindow().getMainWindowTable().getValueAt(i, 1).toString().replaceAll("[\\D]", "."); //for any user input ex: 22/10/2020  22.10.2020  22 10 2020 22-10-2020 etc
+                                String reformatDate = mainWindow().getMainWindowTable().getValueAt(i, 1).toString().replaceAll("\\D", "."); //for any user input ex: 22/10/2020  22.10.2020  22 10 2020 22-10-2020 etc
                                 int tableYear = Integer.parseInt(reformatDate.split("\\.")[2]);
                                 int tableMonth = Integer.parseInt(reformatDate.split("\\.")[1]);
                                 int tableDay = Integer.parseInt(reformatDate.split("\\.")[0]);

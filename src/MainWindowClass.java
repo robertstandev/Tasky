@@ -10,7 +10,7 @@ public class MainWindowClass extends Tasky
     public MainWindowClass(GUIBuilderClass guiBuilderClass, SaveLoadClass saveLoadClass, Dimension screenSize)
     {
         guiBuilderClass.setWindowFrame(mainWindowFrame,"Tasky - Main Window",saveLoadClass.getApplicationTopMost(), new Dimension(800,600),new Point(screenSize.width/2 - 400, screenSize.height/2 - 300),new Color(255,255,255,255),1f,false,false,false,true);
-        //mainWindowFrame.getContentPane().setLayout(null);
+        //this.mainWindowFrame.getContentPane().setLayout(null);
 
         createFirstTabTable(guiBuilderClass);
         createFirstTabButtons(guiBuilderClass);

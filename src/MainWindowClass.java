@@ -83,7 +83,7 @@ public class MainWindowClass extends Tasky
         JTabbedPane tabbedPane = new JTabbedPane();
         tabbedPane.addTab("Table", null, mainWindowPage1,"Table");
         tabbedPane.addTab("Options", null, mainWindowPage2,"Options");
-        mainWindowFrame.getContentPane().add(tabbedPane);
+        this.mainWindowFrame.getContentPane().add(tabbedPane);
     }
 
 

@@ -3,11 +3,10 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.filechooser.FileSystemView;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.util.Objects;
 
 public class MainWindowClass extends Tasky
 {
-    private SaveLoadClass saveLoadClass;
-
     public MainWindowClass(GUIBuilderClass guiBuilderClass, SaveLoadClass saveLoadClass, Dimension screenSize)
     {
         guiBuilderClass.setWindowFrame(mainWindowFrame,"Tasky - Main Window",saveLoadClass.getApplicationTopMost(), new Dimension(800,600),new Point(screenSize.width/2 - 400, screenSize.height/2 - 300),new Color(255,255,255,255),1f,false,false,false,true);
@@ -79,7 +78,7 @@ public class MainWindowClass extends Tasky
 
 
     //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=GUI=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-    public void createTabs()
+    private void createTabs()
     {
         JTabbedPane tabbedPane = new JTabbedPane();
         tabbedPane.addTab("Table", null, mainWindowPage1,"Table");
@@ -88,7 +87,7 @@ public class MainWindowClass extends Tasky
     }
 
 
-    public void createFirstTabTable(GUIBuilderClass guiBuilderClass)
+    private void createFirstTabTable(GUIBuilderClass guiBuilderClass)
     {
         //ADD JScrollPane
         JScrollPane scrollPane = new JScrollPane();
@@ -124,7 +123,7 @@ public class MainWindowClass extends Tasky
     }
 
 
-    public void createFirstTabButtons(GUIBuilderClass guiBuilderClass)
+    private void createFirstTabButtons(GUIBuilderClass guiBuilderClass)
     {
         //ADD ROW BUTTON
         mainWindowAddRowButton.addActionListener(arg0 ->
@@ -135,7 +134,7 @@ public class MainWindowClass extends Tasky
                 tableModel.setValueAt(true,tableModel.getRowCount() - 1,0);
                 tableModel.setValueAt(mainWindowFirstTabDateTextBox.getText(),tableModel.getRowCount()-1,1);
                 tableModel.setValueAt(mainWindowFirstTabTimeTextBox.getText(),tableModel.getRowCount()-1,2);
-                tableModel.setValueAt(mainWindowFirstTabActionComboBox.getSelectedItem().toString(),tableModel.getRowCount()-1,3);
+                tableModel.setValueAt(Objects.requireNonNull(mainWindowFirstTabActionComboBox.getSelectedItem()).toString(),tableModel.getRowCount()-1,3);
                 tableModel.setValueAt(mainWindowFirstTabMessageTextBox.getText(),tableModel.getRowCount()-1,4);
             }
             else
@@ -177,7 +176,7 @@ public class MainWindowClass extends Tasky
     }
 
 
-    public void createFirstTabTextBoxes(GUIBuilderClass guiBuilderClass)
+    private void createFirstTabTextBoxes(GUIBuilderClass guiBuilderClass)
     {
         guiBuilderClass.setTextBox(mainWindowFirstTabDateTextBox, "~",new Color(0,0,0,255),new Color(245,245,245,255),true, new Dimension(100,20), new Point(80,10), "Use ~ For Everyday Else Use Date Format: 25.10.2020");
         guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255),mainWindowFirstTabDateTextBox);
@@ -190,7 +189,7 @@ public class MainWindowClass extends Tasky
     }
 
 
-    public void createFirstTabLabels(GUIBuilderClass guiBuilderClass)
+    private void createFirstTabLabels(GUIBuilderClass guiBuilderClass)
     {
         guiBuilderClass.setLabel(mainWindowFirstTabDateLabel, "Date:", new Font("Arial",Font.PLAIN,12), new Color(0,0,0,255),new Dimension(40,10),new Point(25,15));
         guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255),mainWindowFirstTabDateLabel);
@@ -206,7 +205,7 @@ public class MainWindowClass extends Tasky
     }
 
 
-    public void createFirstTabComboBoxes(GUIBuilderClass guiBuilderClass)
+    private void createFirstTabComboBoxes(GUIBuilderClass guiBuilderClass)
     {
         guiBuilderClass.setComboBox(mainWindowFirstTabActionComboBox, new String[] {"Alarm","Open File","Open Folder","Open URL","Shutdown PC"}, new Color(245,245,245,255), new Dimension(120,20), new Point(270,10), "Actions:"+"Alarm - To Just Show A Window With The Message"+"Open - To Open A File Or Folder");
         guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255), mainWindowFirstTabActionComboBox);
@@ -223,7 +222,7 @@ public class MainWindowClass extends Tasky
     }
 
 
-    public void createSecondTabTextBoxes(GUIBuilderClass guiBuilderClass , SaveLoadClass saveLoadClass)
+    private void createSecondTabTextBoxes(GUIBuilderClass guiBuilderClass , SaveLoadClass saveLoadClass)
     {
         guiBuilderClass.setTextBox(mainWindowSecondTabTablePathSettingTextBoxArea, saveLoadClass.getTableContentsLocation(), new Color(0,0,0,255),new Color(245,245,245,255),true, new Dimension(400,20), new Point(140,25), "Location where the table contents will saved");
         guiBuilderClass.setJPanel(mainWindowPage2, new Color(255,255,255,255),mainWindowSecondTabTablePathSettingTextBoxArea);
@@ -233,7 +232,7 @@ public class MainWindowClass extends Tasky
     }
 
 
-    public void createSecondTabButtons(GUIBuilderClass guiBuilderClass)
+    private void createSecondTabButtons(GUIBuilderClass guiBuilderClass)
     {
         JFileChooser FileChooser = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
         mainWindowSecondTabTablePathSettingButton.addActionListener(arg0 ->
@@ -264,12 +263,12 @@ public class MainWindowClass extends Tasky
     }
 
 
-    public void createSecondTabCheckBoxes(GUIBuilderClass guiBuilderClass, SaveLoadClass saveLoadClass)
+    private void createSecondTabCheckBoxes(GUIBuilderClass guiBuilderClass, SaveLoadClass saveLoadClass)
     {
         guiBuilderClass.setCheckBox(mainWindowSecondTabTopMostCheckBox, "Application Top Most",new Color(0,0,0,255),new Color(255,255,255,255), new Dimension(180,20), new Point(25,100), "Make the application windows be on top of all other system windows");
         guiBuilderClass.setJPanel(mainWindowPage2, new Color(255,255,255,255),mainWindowSecondTabTopMostCheckBox);
         mainWindowSecondTabTopMostCheckBox.setSelected(saveLoadClass.getApplicationTopMost());
-        mainWindowSecondTabTopMostCheckBox.addActionListener(arg0 -> { mainWindowFrame.setAlwaysOnTop(mainWindowSecondTabTopMostCheckBox.isSelected()); });
+        mainWindowSecondTabTopMostCheckBox.addActionListener(arg0 -> mainWindowFrame.setAlwaysOnTop(mainWindowSecondTabTopMostCheckBox.isSelected()));
 
         guiBuilderClass.setCheckBox(mainWindowSecondTabAutoRemoveExecutedCheckBox, "Automatically remove items",new Color(0,0,0,255),new Color(255,255,255,255), new Dimension(220,20), new Point(25,125), "After an item is executed if it doesn't have '~' as date , it will be automatically removed from the table");
         guiBuilderClass.setJPanel(mainWindowPage2, new Color(255,255,255,255),mainWindowSecondTabAutoRemoveExecutedCheckBox);
@@ -277,7 +276,7 @@ public class MainWindowClass extends Tasky
     }
 
 
-    public void createSecondTabLabels(GUIBuilderClass guiBuilderClass)
+    private void createSecondTabLabels(GUIBuilderClass guiBuilderClass)
     {
         guiBuilderClass.setLabel(mainWindowSecondTabTablePathSettingLabel, "Table Save Path:", new Font("Arial",Font.PLAIN,12), new Color(0,0,0,255),new Dimension(105,10),new Point(20,30));
         guiBuilderClass.setJPanel(mainWindowPage2, new Color(255,255,255,255),mainWindowSecondTabTablePathSettingLabel);

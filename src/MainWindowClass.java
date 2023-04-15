@@ -27,7 +27,7 @@ public class MainWindowClass extends Tasky
 
         saveLoadClass.loadFromFileToTable(this.tableModel);
 
-        mainWindowFrame.setVisible(true);
+        this.mainWindowFrame.setVisible(true);
     }
 
 

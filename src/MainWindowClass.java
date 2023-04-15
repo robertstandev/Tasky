@@ -268,7 +268,7 @@ public class MainWindowClass extends Tasky
         guiBuilderClass.setCheckBox(mainWindowSecondTabTopMostCheckBox, "Application Top Most",new Color(0,0,0,255),new Color(255,255,255,255), new Dimension(180,20), new Point(25,100), "Make the application windows be on top of all other system windows");
         guiBuilderClass.setJPanel(mainWindowPage2, new Color(255,255,255,255),mainWindowSecondTabTopMostCheckBox);
         mainWindowSecondTabTopMostCheckBox.setSelected(saveLoadClass.getApplicationTopMost());
-        mainWindowSecondTabTopMostCheckBox.addActionListener(arg0 -> mainWindowFrame.setAlwaysOnTop(mainWindowSecondTabTopMostCheckBox.isSelected()));
+        mainWindowSecondTabTopMostCheckBox.addActionListener(arg0 -> this.mainWindowFrame.setAlwaysOnTop(mainWindowSecondTabTopMostCheckBox.isSelected()));
 
         guiBuilderClass.setCheckBox(mainWindowSecondTabAutoRemoveExecutedCheckBox, "Automatically remove items",new Color(0,0,0,255),new Color(255,255,255,255), new Dimension(220,20), new Point(25,125), "After an item is executed if it doesn't have '~' as date , it will be automatically removed from the table");
         guiBuilderClass.setJPanel(mainWindowPage2, new Color(255,255,255,255),mainWindowSecondTabAutoRemoveExecutedCheckBox);

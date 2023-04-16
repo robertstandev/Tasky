@@ -147,9 +147,9 @@ public class MainWindowClass extends Tasky
         //EXECUTE NOW BUTTON
         mainWindowExecuteNowButton.addActionListener(arg0 ->
         {
-            for(int i=0;i < mainWindowTable.getRowCount();i++)
+            for(int i=0;i < this.mainWindowTable.getRowCount();i++)
             {
-                if(mainWindowTable.isRowSelected(i))
+                if(this.mainWindowTable.isRowSelected(i))
                 {
                     notificationWindow().checkActionAndExecute(i);
                 }
@@ -161,8 +161,8 @@ public class MainWindowClass extends Tasky
         //REMOVE SELECTED ROW BUTTON
         mainWindowRemoveSelectedRowButton.addActionListener(arg0 ->
         {
-            DefaultTableModel model = (DefaultTableModel) mainWindowTable.getModel();
-            int[] rows = mainWindowTable.getSelectedRows();
+            DefaultTableModel model = (DefaultTableModel) this.mainWindowTable.getModel();
+            int[] rows = this.mainWindowTable.getSelectedRows();
             for(int i=0;i<rows.length;i++)
             {
                 model.removeRow(rows[i]-i);

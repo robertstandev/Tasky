@@ -94,7 +94,7 @@ public class MainWindowClass extends Tasky
         scrollPane.setBounds(25,75,740,450);
 
         //THE TABLE
-        scrollPane.setViewportView(mainWindowTable);
+        scrollPane.setViewportView(this.mainWindowTable);
 
         //ASSIGN THE MODEL TO TABLE
         tableModel = new DefaultTableModel()
@@ -108,8 +108,8 @@ public class MainWindowClass extends Tasky
                 return String.class;
             }
         };
-        mainWindowTable.setModel(tableModel);
-        mainWindowTable.getTableHeader().setReorderingAllowed(false);
+        this.mainWindowTable.setModel(tableModel);
+        this.mainWindowTable.getTableHeader().setReorderingAllowed(false);
 
 
         //THE COLUMNS

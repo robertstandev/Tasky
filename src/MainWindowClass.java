@@ -69,7 +69,7 @@ public class MainWindowClass extends Tasky
         return this.mainWindowTable;
     }
     public DefaultTableModel getTableModel() {
-        return tableModel;
+        return this.tableModel;
     }
     public String getMainWindowSecondTabTablePathSettingTextBoxArea() { return this.mainWindowSecondTabTablePathSettingTextBoxArea.getText(); }
     public String getMainWindowSecondTabAlarmAudioPathSettingTextBoxArea() { return this.mainWindowSecondTabAlarmAudioPathSettingTextBoxArea.getText(); }

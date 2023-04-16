@@ -97,7 +97,7 @@ public class MainWindowClass extends Tasky
         scrollPane.setViewportView(this.mainWindowTable);
 
         //ASSIGN THE MODEL TO TABLE
-        tableModel = new DefaultTableModel()
+        this.tableModel = new DefaultTableModel()
         {
             public Class<?> getColumnClass(int column)
             {
@@ -108,13 +108,13 @@ public class MainWindowClass extends Tasky
                 return String.class;
             }
         };
-        this.mainWindowTable.setModel(tableModel);
+        this.mainWindowTable.setModel(this.tableModel);
         this.mainWindowTable.getTableHeader().setReorderingAllowed(false);
 
 
         //THE COLUMNS
-        tableModel.addColumn("Active");
-        tableModel.addColumn("Date");
+        this.tableModel.addColumn("Active");
+        this.tableModel.addColumn("Date");
         tableModel.addColumn("Time");
         tableModel.addColumn("Action");
         tableModel.addColumn("Message or Path");
@@ -135,7 +135,7 @@ public class MainWindowClass extends Tasky
                 tableModel.setValueAt(mainWindowFirstTabDateTextBox.getText(),tableModel.getRowCount()-1,1);
                 tableModel.setValueAt(mainWindowFirstTabTimeTextBox.getText(),tableModel.getRowCount()-1,2);
                 tableModel.setValueAt(Objects.requireNonNull(mainWindowFirstTabActionComboBox.getSelectedItem()).toString(),tableModel.getRowCount()-1,3);
-                tableModel.setValueAt(mainWindowFirstTabMessageTextBox.getText(),tableModel.getRowCount()-1,4);
+                this.tableModel.setValueAt(mainWindowFirstTabMessageTextBox.getText(),this.tableModel.getRowCount()-1,4);
             }
             else
             {

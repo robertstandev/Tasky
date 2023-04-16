@@ -66,7 +66,7 @@ public class MainWindowClass extends Tasky
 
     //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=GETTERS=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
     public JTable getMainWindowTable() {
-        return mainWindowTable;
+        return this.mainWindowTable;
     }
     public DefaultTableModel getTableModel() {
         return tableModel;

@@ -39,7 +39,7 @@ public class MainWindowClass extends Tasky
     private final JButton mainWindowAddRowButton = new JButton();
     private final JButton mainWindowExecuteNowButton = new JButton();
     private final JButton mainWindowRemoveSelectedRowButton = new JButton();
-    private final JButton mainWindowSecondTabTablePathSettingButton = new JButton();
+    private final JButton mainWindowSecondTabTablePathSettingButton = new JButton();//<---
     private final JButton mainWindowSecondTabAlarmAudioPathSettingButton = new JButton();
 
     private final JTextField mainWindowFirstTabDateTextBox = new JTextField();
@@ -159,7 +159,7 @@ public class MainWindowClass extends Tasky
         guiBuilderClass.setButton(this.mainWindowExecuteNowButton, "Execute Selected", new Dimension(155,25),new Point(610,8) , new Color(255,100,0,255), "Execute Selected Row Now");
 
         //REMOVE SELECTED ROW BUTTON
-        mainWindowRemoveSelectedRowButton.addActionListener(arg0 ->
+        this.mainWindowRemoveSelectedRowButton.addActionListener(arg0 ->
         {
             DefaultTableModel model = (DefaultTableModel) this.mainWindowTable.getModel();
             int[] rows = this.mainWindowTable.getSelectedRows();
@@ -168,11 +168,11 @@ public class MainWindowClass extends Tasky
                 model.removeRow(rows[i]-i);
             }
         });
-        guiBuilderClass.setButton(mainWindowRemoveSelectedRowButton, "Remove Selected", new Dimension(155,25),new Point(610,42) , new Color(255,0,0,255), "Remove Selected Row");
+        guiBuilderClass.setButton(this.mainWindowRemoveSelectedRowButton, "Remove Selected", new Dimension(155,25),new Point(610,42) , new Color(255,0,0,255), "Remove Selected Row");
 
         guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255),this.mainWindowAddRowButton);
         guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255),this.mainWindowExecuteNowButton);
-        guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255),mainWindowRemoveSelectedRowButton);
+        guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255),this.mainWindowRemoveSelectedRowButton);
     }
 
 

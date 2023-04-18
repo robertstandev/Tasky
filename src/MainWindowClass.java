@@ -126,7 +126,7 @@ public class MainWindowClass extends Tasky
     private void createFirstTabButtons(GUIBuilderClass guiBuilderClass)
     {
         //ADD ROW BUTTON
-        mainWindowAddRowButton.addActionListener(arg0 ->
+        this.mainWindowAddRowButton.addActionListener(arg0 ->
         {
             if(mainWindowFirstTabDateTextBox.getText().length() > 0 && mainWindowFirstTabTimeTextBox.getText().length() > 2 && mainWindowFirstTabMessageTextBox.getText().length() > 0)
             {
@@ -142,7 +142,7 @@ public class MainWindowClass extends Tasky
                 new ErrorBuilder("Please fill all the boxes !");
             }
         });
-        guiBuilderClass.setButton(mainWindowAddRowButton, "Add Row", new Dimension(95,25),new Point(420,8) , new Color(50,50,255,255), "Create New Row From Your Input");
+        guiBuilderClass.setButton(this.mainWindowAddRowButton, "Add Row", new Dimension(95,25),new Point(420,8) , new Color(50,50,255,255), "Create New Row From Your Input");
 
         //EXECUTE NOW BUTTON
         mainWindowExecuteNowButton.addActionListener(arg0 ->
@@ -170,7 +170,7 @@ public class MainWindowClass extends Tasky
         });
         guiBuilderClass.setButton(mainWindowRemoveSelectedRowButton, "Remove Selected", new Dimension(155,25),new Point(610,42) , new Color(255,0,0,255), "Remove Selected Row");
 
-        guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255),mainWindowAddRowButton);
+        guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255),this.mainWindowAddRowButton);
         guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255),mainWindowExecuteNowButton);
         guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255),mainWindowRemoveSelectedRowButton);
     }

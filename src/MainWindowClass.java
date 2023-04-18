@@ -115,9 +115,9 @@ public class MainWindowClass extends Tasky
         //THE COLUMNS
         this.tableModel.addColumn("Active");
         this.tableModel.addColumn("Date");
-        tableModel.addColumn("Time");
-        tableModel.addColumn("Action");
-        tableModel.addColumn("Message or Path");
+        this.tableModel.addColumn("Time");
+        this.tableModel.addColumn("Action");
+        this.tableModel.addColumn("Message or Path");
 
         guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255),scrollPane);
     }
@@ -130,11 +130,11 @@ public class MainWindowClass extends Tasky
         {
             if(mainWindowFirstTabDateTextBox.getText().length() > 0 && mainWindowFirstTabTimeTextBox.getText().length() > 2 && mainWindowFirstTabMessageTextBox.getText().length() > 0)
             {
-                tableModel.addRow(new Object[0]);
-                tableModel.setValueAt(true,tableModel.getRowCount() - 1,0);
-                tableModel.setValueAt(mainWindowFirstTabDateTextBox.getText(),tableModel.getRowCount()-1,1);
-                tableModel.setValueAt(mainWindowFirstTabTimeTextBox.getText(),tableModel.getRowCount()-1,2);
-                tableModel.setValueAt(Objects.requireNonNull(mainWindowFirstTabActionComboBox.getSelectedItem()).toString(),tableModel.getRowCount()-1,3);
+                this.tableModel.addRow(new Object[0]);
+                this.tableModel.setValueAt(true,this.tableModel.getRowCount() - 1,0);
+                this.tableModel.setValueAt(mainWindowFirstTabDateTextBox.getText(),this.tableModel.getRowCount()-1,1);
+                this.tableModel.setValueAt(mainWindowFirstTabTimeTextBox.getText(),this.tableModel.getRowCount()-1,2);
+                this.tableModel.setValueAt(Objects.requireNonNull(mainWindowFirstTabActionComboBox.getSelectedItem()).toString(),this.tableModel.getRowCount()-1,3);
                 this.tableModel.setValueAt(mainWindowFirstTabMessageTextBox.getText(),this.tableModel.getRowCount()-1,4);
             }
             else

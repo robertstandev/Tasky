@@ -39,7 +39,7 @@ public class MainWindowClass extends Tasky
     private final JButton mainWindowAddRowButton = new JButton();
     private final JButton mainWindowExecuteNowButton = new JButton();
     private final JButton mainWindowRemoveSelectedRowButton = new JButton();
-    private final JButton mainWindowSecondTabTablePathSettingButton = new JButton();//<---
+    private final JButton mainWindowSecondTabTablePathSettingButton = new JButton();
     private final JButton mainWindowSecondTabAlarmAudioPathSettingButton = new JButton();
 
     private final JTextField mainWindowFirstTabDateTextBox = new JTextField();
@@ -128,11 +128,11 @@ public class MainWindowClass extends Tasky
         //ADD ROW BUTTON
         this.mainWindowAddRowButton.addActionListener(arg0 ->
         {
-            if(mainWindowFirstTabDateTextBox.getText().length() > 0 && mainWindowFirstTabTimeTextBox.getText().length() > 2 && mainWindowFirstTabMessageTextBox.getText().length() > 0)
+            if(this.mainWindowFirstTabDateTextBox.getText().length() > 0 && mainWindowFirstTabTimeTextBox.getText().length() > 2 && mainWindowFirstTabMessageTextBox.getText().length() > 0)
             {
                 this.tableModel.addRow(new Object[0]);
                 this.tableModel.setValueAt(true,this.tableModel.getRowCount() - 1,0);
-                this.tableModel.setValueAt(mainWindowFirstTabDateTextBox.getText(),this.tableModel.getRowCount()-1,1);
+                this.tableModel.setValueAt(this.mainWindowFirstTabDateTextBox.getText(),this.tableModel.getRowCount()-1,1);
                 this.tableModel.setValueAt(mainWindowFirstTabTimeTextBox.getText(),this.tableModel.getRowCount()-1,2);
                 this.tableModel.setValueAt(Objects.requireNonNull(mainWindowFirstTabActionComboBox.getSelectedItem()).toString(),this.tableModel.getRowCount()-1,3);
                 this.tableModel.setValueAt(mainWindowFirstTabMessageTextBox.getText(),this.tableModel.getRowCount()-1,4);
@@ -178,8 +178,8 @@ public class MainWindowClass extends Tasky
 
     private void createFirstTabTextBoxes(GUIBuilderClass guiBuilderClass)
     {
-        guiBuilderClass.setTextBox(mainWindowFirstTabDateTextBox, "~",new Color(0,0,0,255),new Color(245,245,245,255),true, new Dimension(100,20), new Point(80,10), "Use ~ For Everyday Else Use Date Format: 25.10.2020");
-        guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255),mainWindowFirstTabDateTextBox);
+        guiBuilderClass.setTextBox(this.mainWindowFirstTabDateTextBox, "~",new Color(0,0,0,255),new Color(245,245,245,255),true, new Dimension(100,20), new Point(80,10), "Use ~ For Everyday Else Use Date Format: 25.10.2020");
+        guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255),this.mainWindowFirstTabDateTextBox);
 
         guiBuilderClass.setTextBox(mainWindowFirstTabTimeTextBox, "00:05",new Color(0,0,0,255),new Color(245,245,245,255),true, new Dimension(100,20), new Point(80,40), "Use 24h Time Format With 0 If Number Lower Than 9 Example: 00:05");
         guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255),mainWindowFirstTabTimeTextBox);
@@ -247,7 +247,7 @@ public class MainWindowClass extends Tasky
         guiBuilderClass.setButton(this.mainWindowSecondTabTablePathSettingButton, "Modify Path", new Dimension(120,25),new Point(560,20) , new Color(0,0,0,255), "Modify Table Contents Path");
         guiBuilderClass.setJPanel(mainWindowPage2, new Color(255,255,255,255),this.mainWindowSecondTabTablePathSettingButton);
 
-        mainWindowSecondTabAlarmAudioPathSettingButton.addActionListener(arg0 ->
+        this.mainWindowSecondTabAlarmAudioPathSettingButton.addActionListener(arg0 ->
         {
             FileChooser.setDialogTitle("Select An Audio File From PC");
             FileNameExtensionFilter filter = new FileNameExtensionFilter("Audio Files", "wav", "wav");
@@ -258,8 +258,8 @@ public class MainWindowClass extends Tasky
                 mainWindowSecondTabAlarmAudioPathSettingTextBoxArea.setText(FileChooser.getSelectedFile().getAbsolutePath());
             }
         });
-        guiBuilderClass.setButton(mainWindowSecondTabAlarmAudioPathSettingButton, "Select File", new Dimension(120,25),new Point(560,55) , new Color(0,0,0,255), "Select Alarm Audio Path (.wav)");
-        guiBuilderClass.setJPanel(mainWindowPage2, new Color(255,255,255,255),mainWindowSecondTabAlarmAudioPathSettingButton);
+        guiBuilderClass.setButton(this.mainWindowSecondTabAlarmAudioPathSettingButton, "Select File", new Dimension(120,25),new Point(560,55) , new Color(0,0,0,255), "Select Alarm Audio Path (.wav)");
+        guiBuilderClass.setJPanel(mainWindowPage2, new Color(255,255,255,255),this.mainWindowSecondTabAlarmAudioPathSettingButton);
     }
 
 

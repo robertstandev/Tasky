@@ -45,7 +45,7 @@ public class MainWindowClass extends Tasky
     private final JTextField mainWindowFirstTabDateTextBox = new JTextField();
     private final JTextField mainWindowFirstTabTimeTextBox = new JTextField();
     private final JTextField mainWindowFirstTabMessageTextBox = new JTextField();
-    private final JTextField mainWindowSecondTabTablePathSettingTextBoxArea = new JTextField();
+    private final JTextField mainWindowSecondTabTablePathSettingTextBoxArea = new JTextField();//<------
     private final JTextField mainWindowSecondTabAlarmAudioPathSettingTextBoxArea = new JTextField();
 
     private final JCheckBox mainWindowSecondTabTopMostCheckBox = new JCheckBox();
@@ -128,14 +128,14 @@ public class MainWindowClass extends Tasky
         //ADD ROW BUTTON
         this.mainWindowAddRowButton.addActionListener(arg0 ->
         {
-            if(this.mainWindowFirstTabDateTextBox.getText().length() > 0 && mainWindowFirstTabTimeTextBox.getText().length() > 2 && mainWindowFirstTabMessageTextBox.getText().length() > 0)
+            if(this.mainWindowFirstTabDateTextBox.getText().length() > 0 && this.mainWindowFirstTabTimeTextBox.getText().length() > 2 && this.mainWindowFirstTabMessageTextBox.getText().length() > 0)
             {
                 this.tableModel.addRow(new Object[0]);
                 this.tableModel.setValueAt(true,this.tableModel.getRowCount() - 1,0);
                 this.tableModel.setValueAt(this.mainWindowFirstTabDateTextBox.getText(),this.tableModel.getRowCount()-1,1);
-                this.tableModel.setValueAt(mainWindowFirstTabTimeTextBox.getText(),this.tableModel.getRowCount()-1,2);
+                this.tableModel.setValueAt(this.mainWindowFirstTabTimeTextBox.getText(),this.tableModel.getRowCount()-1,2);
                 this.tableModel.setValueAt(Objects.requireNonNull(mainWindowFirstTabActionComboBox.getSelectedItem()).toString(),this.tableModel.getRowCount()-1,3);
-                this.tableModel.setValueAt(mainWindowFirstTabMessageTextBox.getText(),this.tableModel.getRowCount()-1,4);
+                this.tableModel.setValueAt(this.mainWindowFirstTabMessageTextBox.getText(),this.tableModel.getRowCount()-1,4);
             }
             else
             {
@@ -181,11 +181,11 @@ public class MainWindowClass extends Tasky
         guiBuilderClass.setTextBox(this.mainWindowFirstTabDateTextBox, "~",new Color(0,0,0,255),new Color(245,245,245,255),true, new Dimension(100,20), new Point(80,10), "Use ~ For Everyday Else Use Date Format: 25.10.2020");
         guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255),this.mainWindowFirstTabDateTextBox);
 
-        guiBuilderClass.setTextBox(mainWindowFirstTabTimeTextBox, "00:05",new Color(0,0,0,255),new Color(245,245,245,255),true, new Dimension(100,20), new Point(80,40), "Use 24h Time Format With 0 If Number Lower Than 9 Example: 00:05");
-        guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255),mainWindowFirstTabTimeTextBox);
+        guiBuilderClass.setTextBox(this.mainWindowFirstTabTimeTextBox, "00:05",new Color(0,0,0,255),new Color(245,245,245,255),true, new Dimension(100,20), new Point(80,40), "Use 24h Time Format With 0 If Number Lower Than 9 Example: 00:05");
+        guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255),this.mainWindowFirstTabTimeTextBox);
 
-        guiBuilderClass.setTextBox(mainWindowFirstTabMessageTextBox, "Prepare For Meeting!",new Color(0,0,0,255),new Color(245,245,245,255),true, new Dimension(100,20), new Point(270,40), "Type What Text You Want");
-        guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255),mainWindowFirstTabMessageTextBox);
+        guiBuilderClass.setTextBox(this.mainWindowFirstTabMessageTextBox, "Prepare For Meeting!",new Color(0,0,0,255),new Color(245,245,245,255),true, new Dimension(100,20), new Point(270,40), "Type What Text You Want");
+        guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255),this.mainWindowFirstTabMessageTextBox);
     }
 
 
@@ -217,7 +217,7 @@ public class MainWindowClass extends Tasky
             }else{
                 mainWindowFirstTabMessageLabel.setText("Path:");
             }
-            mainWindowFirstTabMessageTextBox.setText("");
+            this.mainWindowFirstTabMessageTextBox.setText("");
         });
     }
 

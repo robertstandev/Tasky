@@ -235,7 +235,7 @@ public class MainWindowClass extends Tasky
     private void createSecondTabButtons(GUIBuilderClass guiBuilderClass)
     {
         JFileChooser FileChooser = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
-        mainWindowSecondTabTablePathSettingButton.addActionListener(arg0 ->
+        this.mainWindowSecondTabTablePathSettingButton.addActionListener(arg0 ->
         {
             FileChooser.setDialogTitle("Select Path And Name For Table Contents");
             int UserInputResult = FileChooser.showSaveDialog(null);
@@ -244,8 +244,8 @@ public class MainWindowClass extends Tasky
                 mainWindowSecondTabTablePathSettingTextBoxArea.setText(FileChooser.getSelectedFile().getAbsolutePath());
             }
         });
-        guiBuilderClass.setButton(mainWindowSecondTabTablePathSettingButton, "Modify Path", new Dimension(120,25),new Point(560,20) , new Color(0,0,0,255), "Modify Table Contents Path");
-        guiBuilderClass.setJPanel(mainWindowPage2, new Color(255,255,255,255),mainWindowSecondTabTablePathSettingButton);
+        guiBuilderClass.setButton(this.mainWindowSecondTabTablePathSettingButton, "Modify Path", new Dimension(120,25),new Point(560,20) , new Color(0,0,0,255), "Modify Table Contents Path");
+        guiBuilderClass.setJPanel(mainWindowPage2, new Color(255,255,255,255),this.mainWindowSecondTabTablePathSettingButton);
 
         mainWindowSecondTabAlarmAudioPathSettingButton.addActionListener(arg0 ->
         {

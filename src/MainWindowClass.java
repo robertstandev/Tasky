@@ -227,8 +227,8 @@ public class MainWindowClass extends Tasky
         guiBuilderClass.setTextBox(this.mainWindowSecondTabTablePathSettingTextBoxArea, saveLoadClass.getTableContentsLocation(), new Color(0,0,0,255),new Color(245,245,245,255),true, new Dimension(400,20), new Point(140,25), "Location where the table contents will saved");
         guiBuilderClass.setJPanel(mainWindowPage2, new Color(255,255,255,255),this.mainWindowSecondTabTablePathSettingTextBoxArea);
 
-        guiBuilderClass.setTextBox(mainWindowSecondTabAlarmAudioPathSettingTextBoxArea, saveLoadClass.getAlarmAudioLocation(), new Color(0,0,0,255),new Color(245,245,245,255),true, new Dimension(400,20), new Point(140,60), "Location where the alarm audio file is");
-        guiBuilderClass.setJPanel(mainWindowPage2, new Color(255,255,255,255),mainWindowSecondTabAlarmAudioPathSettingTextBoxArea);
+        guiBuilderClass.setTextBox(this.mainWindowSecondTabAlarmAudioPathSettingTextBoxArea, saveLoadClass.getAlarmAudioLocation(), new Color(0,0,0,255),new Color(245,245,245,255),true, new Dimension(400,20), new Point(140,60), "Location where the alarm audio file is");
+        guiBuilderClass.setJPanel(mainWindowPage2, new Color(255,255,255,255),this.mainWindowSecondTabAlarmAudioPathSettingTextBoxArea);
     }
 
 
@@ -255,7 +255,7 @@ public class MainWindowClass extends Tasky
             int UserInputResult = FileChooser.showOpenDialog(null);
             if (UserInputResult == JFileChooser.APPROVE_OPTION && FileChooser.getSelectedFile().exists())
             {
-                mainWindowSecondTabAlarmAudioPathSettingTextBoxArea.setText(FileChooser.getSelectedFile().getAbsolutePath());
+                this.mainWindowSecondTabAlarmAudioPathSettingTextBoxArea.setText(FileChooser.getSelectedFile().getAbsolutePath());
             }
         });
         guiBuilderClass.setButton(this.mainWindowSecondTabAlarmAudioPathSettingButton, "Select File", new Dimension(120,25),new Point(560,55) , new Color(0,0,0,255), "Select Alarm Audio Path (.wav)");

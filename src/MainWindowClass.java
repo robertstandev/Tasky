@@ -45,7 +45,7 @@ public class MainWindowClass extends Tasky
     private final JTextField mainWindowFirstTabDateTextBox = new JTextField();
     private final JTextField mainWindowFirstTabTimeTextBox = new JTextField();
     private final JTextField mainWindowFirstTabMessageTextBox = new JTextField();
-    private final JTextField mainWindowSecondTabTablePathSettingTextBoxArea = new JTextField();//<------
+    private final JTextField mainWindowSecondTabTablePathSettingTextBoxArea = new JTextField();
     private final JTextField mainWindowSecondTabAlarmAudioPathSettingTextBoxArea = new JTextField();
 
     private final JCheckBox mainWindowSecondTabTopMostCheckBox = new JCheckBox();
@@ -224,8 +224,8 @@ public class MainWindowClass extends Tasky
 
     private void createSecondTabTextBoxes(GUIBuilderClass guiBuilderClass , SaveLoadClass saveLoadClass)
     {
-        guiBuilderClass.setTextBox(mainWindowSecondTabTablePathSettingTextBoxArea, saveLoadClass.getTableContentsLocation(), new Color(0,0,0,255),new Color(245,245,245,255),true, new Dimension(400,20), new Point(140,25), "Location where the table contents will saved");
-        guiBuilderClass.setJPanel(mainWindowPage2, new Color(255,255,255,255),mainWindowSecondTabTablePathSettingTextBoxArea);
+        guiBuilderClass.setTextBox(this.mainWindowSecondTabTablePathSettingTextBoxArea, saveLoadClass.getTableContentsLocation(), new Color(0,0,0,255),new Color(245,245,245,255),true, new Dimension(400,20), new Point(140,25), "Location where the table contents will saved");
+        guiBuilderClass.setJPanel(mainWindowPage2, new Color(255,255,255,255),this.mainWindowSecondTabTablePathSettingTextBoxArea);
 
         guiBuilderClass.setTextBox(mainWindowSecondTabAlarmAudioPathSettingTextBoxArea, saveLoadClass.getAlarmAudioLocation(), new Color(0,0,0,255),new Color(245,245,245,255),true, new Dimension(400,20), new Point(140,60), "Location where the alarm audio file is");
         guiBuilderClass.setJPanel(mainWindowPage2, new Color(255,255,255,255),mainWindowSecondTabAlarmAudioPathSettingTextBoxArea);
@@ -241,7 +241,7 @@ public class MainWindowClass extends Tasky
             int UserInputResult = FileChooser.showSaveDialog(null);
             if (UserInputResult == JFileChooser.APPROVE_OPTION)
             {
-                mainWindowSecondTabTablePathSettingTextBoxArea.setText(FileChooser.getSelectedFile().getAbsolutePath());
+                this.mainWindowSecondTabTablePathSettingTextBoxArea.setText(FileChooser.getSelectedFile().getAbsolutePath());
             }
         });
         guiBuilderClass.setButton(this.mainWindowSecondTabTablePathSettingButton, "Modify Path", new Dimension(120,25),new Point(560,20) , new Color(0,0,0,255), "Modify Table Contents Path");

@@ -194,8 +194,8 @@ public class MainWindowClass extends Tasky
         guiBuilderClass.setLabel(this.mainWindowFirstTabDateLabel, "Date:", new Font("Arial",Font.PLAIN,12), new Color(0,0,0,255),new Dimension(40,10),new Point(25,15));
         guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255),this.mainWindowFirstTabDateLabel);
 
-        guiBuilderClass.setLabel(mainWindowFirstTabTimeLabel, "Time:", new Font("Arial",Font.PLAIN,12), new Color(0,0,0,255),new Dimension(40,10),new Point(25,45));
-        guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255),mainWindowFirstTabTimeLabel);
+        guiBuilderClass.setLabel(this.mainWindowFirstTabTimeLabel, "Time:", new Font("Arial",Font.PLAIN,12), new Color(0,0,0,255),new Dimension(40,10),new Point(25,45));
+        guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255),this.mainWindowFirstTabTimeLabel);
 
         guiBuilderClass.setLabel(mainWindowFirstTabActionLabel, "Action:", new Font("Arial",Font.PLAIN,12), new Color(0,0,0,255),new Dimension(50,10),new Point(195,15));
         guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255),mainWindowFirstTabActionLabel);

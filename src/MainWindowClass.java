@@ -270,9 +270,9 @@ public class MainWindowClass extends Tasky
         this.mainWindowSecondTabTopMostCheckBox.setSelected(saveLoadClass.getApplicationTopMost());
         this.mainWindowSecondTabTopMostCheckBox.addActionListener(arg0 -> this.mainWindowFrame.setAlwaysOnTop(this.mainWindowSecondTabTopMostCheckBox.isSelected()));
 
-        guiBuilderClass.setCheckBox(mainWindowSecondTabAutoRemoveExecutedCheckBox, "Automatically remove items",new Color(0,0,0,255),new Color(255,255,255,255), new Dimension(220,20), new Point(25,125), "After an item is executed if it doesn't have '~' as date , it will be automatically removed from the table");
-        guiBuilderClass.setJPanel(mainWindowPage2, new Color(255,255,255,255),mainWindowSecondTabAutoRemoveExecutedCheckBox);
-        mainWindowSecondTabAutoRemoveExecutedCheckBox.setSelected(saveLoadClass.getTableAutoRemoveItem());
+        guiBuilderClass.setCheckBox(this.mainWindowSecondTabAutoRemoveExecutedCheckBox, "Automatically remove items",new Color(0,0,0,255),new Color(255,255,255,255), new Dimension(220,20), new Point(25,125), "After an item is executed if it doesn't have '~' as date , it will be automatically removed from the table");
+        guiBuilderClass.setJPanel(mainWindowPage2, new Color(255,255,255,255),this.mainWindowSecondTabAutoRemoveExecutedCheckBox);
+        this.mainWindowSecondTabAutoRemoveExecutedCheckBox.setSelected(saveLoadClass.getTableAutoRemoveItem());
     }
 
 

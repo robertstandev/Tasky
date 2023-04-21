@@ -134,7 +134,7 @@ public class MainWindowClass extends Tasky
                 this.tableModel.setValueAt(true,this.tableModel.getRowCount() - 1,0);
                 this.tableModel.setValueAt(this.mainWindowFirstTabDateTextBox.getText(),this.tableModel.getRowCount()-1,1);
                 this.tableModel.setValueAt(this.mainWindowFirstTabTimeTextBox.getText(),this.tableModel.getRowCount()-1,2);
-                this.tableModel.setValueAt(Objects.requireNonNull(mainWindowFirstTabActionComboBox.getSelectedItem()).toString(),this.tableModel.getRowCount()-1,3);
+                this.tableModel.setValueAt(Objects.requireNonNull(this.mainWindowFirstTabActionComboBox.getSelectedItem()).toString(),this.tableModel.getRowCount()-1,3);
                 this.tableModel.setValueAt(this.mainWindowFirstTabMessageTextBox.getText(),this.tableModel.getRowCount()-1,4);
             }
             else
@@ -207,11 +207,11 @@ public class MainWindowClass extends Tasky
 
     private void createFirstTabComboBoxes(GUIBuilderClass guiBuilderClass)
     {
-        guiBuilderClass.setComboBox(mainWindowFirstTabActionComboBox, new String[] {"Alarm","Open File","Open Folder","Open URL","Shutdown PC"}, new Color(245,245,245,255), new Dimension(120,20), new Point(270,10), "Actions:"+"Alarm - To Just Show A Window With The Message"+"Open - To Open A File Or Folder");
-        guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255), mainWindowFirstTabActionComboBox);
+        guiBuilderClass.setComboBox(this.mainWindowFirstTabActionComboBox, new String[] {"Alarm","Open File","Open Folder","Open URL","Shutdown PC"}, new Color(245,245,245,255), new Dimension(120,20), new Point(270,10), "Actions:"+"Alarm - To Just Show A Window With The Message"+"Open - To Open A File Or Folder");
+        guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255), this.mainWindowFirstTabActionComboBox);
         mainWindowFirstTabActionComboBox.addActionListener(arg0 ->
         {
-            if(mainWindowFirstTabActionComboBox.getSelectedIndex() == 0 || mainWindowFirstTabActionComboBox.getSelectedIndex() == 4)
+            if(this.mainWindowFirstTabActionComboBox.getSelectedIndex() == 0 || this.mainWindowFirstTabActionComboBox.getSelectedIndex() == 4)
             {
                 mainWindowFirstTabMessageLabel.setText("Message:");
             }else{

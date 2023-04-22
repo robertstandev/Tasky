@@ -200,8 +200,8 @@ public class MainWindowClass extends Tasky
         guiBuilderClass.setLabel(this.mainWindowFirstTabActionLabel, "Action:", new Font("Arial",Font.PLAIN,12), new Color(0,0,0,255),new Dimension(50,10),new Point(195,15));
         guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255),this.mainWindowFirstTabActionLabel);
 
-        guiBuilderClass.setLabel(mainWindowFirstTabMessageLabel, "Message:", new Font("Arial",Font.PLAIN,12), new Color(0,0,0,255),new Dimension(70,15),new Point(195,45));
-        guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255),mainWindowFirstTabMessageLabel);
+        guiBuilderClass.setLabel(this.mainWindowFirstTabMessageLabel, "Message:", new Font("Arial",Font.PLAIN,12), new Color(0,0,0,255),new Dimension(70,15),new Point(195,45));
+        guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255),this.mainWindowFirstTabMessageLabel);
     }
 
 
@@ -213,9 +213,9 @@ public class MainWindowClass extends Tasky
         {
             if(this.mainWindowFirstTabActionComboBox.getSelectedIndex() == 0 || this.mainWindowFirstTabActionComboBox.getSelectedIndex() == 4)
             {
-                mainWindowFirstTabMessageLabel.setText("Message:");
+                this.mainWindowFirstTabMessageLabel.setText("Message:");
             }else{
-                mainWindowFirstTabMessageLabel.setText("Path:");
+                this.mainWindowFirstTabMessageLabel.setText("Path:");
             }
             this.mainWindowFirstTabMessageTextBox.setText("");
         });

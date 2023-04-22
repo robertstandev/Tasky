@@ -278,8 +278,8 @@ public class MainWindowClass extends Tasky
 
     private void createSecondTabLabels(GUIBuilderClass guiBuilderClass)
     {
-        guiBuilderClass.setLabel(mainWindowSecondTabTablePathSettingLabel, "Table Save Path:", new Font("Arial",Font.PLAIN,12), new Color(0,0,0,255),new Dimension(105,10),new Point(20,30));
-        guiBuilderClass.setJPanel(mainWindowPage2, new Color(255,255,255,255),mainWindowSecondTabTablePathSettingLabel);
+        guiBuilderClass.setLabel(this.mainWindowSecondTabTablePathSettingLabel, "Table Save Path:", new Font("Arial",Font.PLAIN,12), new Color(0,0,0,255),new Dimension(105,10),new Point(20,30));
+        guiBuilderClass.setJPanel(mainWindowPage2, new Color(255,255,255,255),this.mainWindowSecondTabTablePathSettingLabel);
 
         guiBuilderClass.setLabel(mainWindowSecondTabAlarmAudioPathSettingLabel, "Alarm Audio Path:", new Font("Arial",Font.PLAIN,12), new Color(0,0,0,255),new Dimension(115,10),new Point(20,65));
         guiBuilderClass.setJPanel(mainWindowPage2, new Color(255,255,255,255),mainWindowSecondTabAlarmAudioPathSettingLabel);

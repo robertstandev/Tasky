@@ -81,7 +81,7 @@ public class MainWindowClass extends Tasky
     private void createTabs()
     {
         JTabbedPane tabbedPane = new JTabbedPane();
-        tabbedPane.addTab("Table", null, mainWindowPage1,"Table");
+        tabbedPane.addTab("Table", null, this.mainWindowPage1,"Table");
         tabbedPane.addTab("Options", null, mainWindowPage2,"Options");
         this.mainWindowFrame.getContentPane().add(tabbedPane);
     }
@@ -119,7 +119,7 @@ public class MainWindowClass extends Tasky
         this.tableModel.addColumn("Action");
         this.tableModel.addColumn("Message or Path");
 
-        guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255),scrollPane);
+        guiBuilderClass.setJPanel(this.mainWindowPage1, new Color(255,255,255,255),scrollPane);
     }
 
 
@@ -170,45 +170,45 @@ public class MainWindowClass extends Tasky
         });
         guiBuilderClass.setButton(this.mainWindowRemoveSelectedRowButton, "Remove Selected", new Dimension(155,25),new Point(610,42) , new Color(255,0,0,255), "Remove Selected Row");
 
-        guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255),this.mainWindowAddRowButton);
-        guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255),this.mainWindowExecuteNowButton);
-        guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255),this.mainWindowRemoveSelectedRowButton);
+        guiBuilderClass.setJPanel(this.mainWindowPage1, new Color(255,255,255,255),this.mainWindowAddRowButton);
+        guiBuilderClass.setJPanel(this.mainWindowPage1, new Color(255,255,255,255),this.mainWindowExecuteNowButton);
+        guiBuilderClass.setJPanel(this.mainWindowPage1, new Color(255,255,255,255),this.mainWindowRemoveSelectedRowButton);
     }
 
 
     private void createFirstTabTextBoxes(GUIBuilderClass guiBuilderClass)
     {
         guiBuilderClass.setTextBox(this.mainWindowFirstTabDateTextBox, "~",new Color(0,0,0,255),new Color(245,245,245,255),true, new Dimension(100,20), new Point(80,10), "Use ~ For Everyday Else Use Date Format: 25.10.2020");
-        guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255),this.mainWindowFirstTabDateTextBox);
+        guiBuilderClass.setJPanel(this.mainWindowPage1, new Color(255,255,255,255),this.mainWindowFirstTabDateTextBox);
 
         guiBuilderClass.setTextBox(this.mainWindowFirstTabTimeTextBox, "00:05",new Color(0,0,0,255),new Color(245,245,245,255),true, new Dimension(100,20), new Point(80,40), "Use 24h Time Format With 0 If Number Lower Than 9 Example: 00:05");
-        guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255),this.mainWindowFirstTabTimeTextBox);
+        guiBuilderClass.setJPanel(this.mainWindowPage1, new Color(255,255,255,255),this.mainWindowFirstTabTimeTextBox);
 
         guiBuilderClass.setTextBox(this.mainWindowFirstTabMessageTextBox, "Prepare For Meeting!",new Color(0,0,0,255),new Color(245,245,245,255),true, new Dimension(100,20), new Point(270,40), "Type What Text You Want");
-        guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255),this.mainWindowFirstTabMessageTextBox);
+        guiBuilderClass.setJPanel(this.mainWindowPage1, new Color(255,255,255,255),this.mainWindowFirstTabMessageTextBox);
     }
 
 
     private void createFirstTabLabels(GUIBuilderClass guiBuilderClass)
     {
         guiBuilderClass.setLabel(this.mainWindowFirstTabDateLabel, "Date:", new Font("Arial",Font.PLAIN,12), new Color(0,0,0,255),new Dimension(40,10),new Point(25,15));
-        guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255),this.mainWindowFirstTabDateLabel);
+        guiBuilderClass.setJPanel(this.mainWindowPage1, new Color(255,255,255,255),this.mainWindowFirstTabDateLabel);
 
         guiBuilderClass.setLabel(this.mainWindowFirstTabTimeLabel, "Time:", new Font("Arial",Font.PLAIN,12), new Color(0,0,0,255),new Dimension(40,10),new Point(25,45));
-        guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255),this.mainWindowFirstTabTimeLabel);
+        guiBuilderClass.setJPanel(this.mainWindowPage1, new Color(255,255,255,255),this.mainWindowFirstTabTimeLabel);
 
         guiBuilderClass.setLabel(this.mainWindowFirstTabActionLabel, "Action:", new Font("Arial",Font.PLAIN,12), new Color(0,0,0,255),new Dimension(50,10),new Point(195,15));
-        guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255),this.mainWindowFirstTabActionLabel);
+        guiBuilderClass.setJPanel(this.mainWindowPage1, new Color(255,255,255,255),this.mainWindowFirstTabActionLabel);
 
         guiBuilderClass.setLabel(this.mainWindowFirstTabMessageLabel, "Message:", new Font("Arial",Font.PLAIN,12), new Color(0,0,0,255),new Dimension(70,15),new Point(195,45));
-        guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255),this.mainWindowFirstTabMessageLabel);
+        guiBuilderClass.setJPanel(this.mainWindowPage1, new Color(255,255,255,255),this.mainWindowFirstTabMessageLabel);
     }
 
 
     private void createFirstTabComboBoxes(GUIBuilderClass guiBuilderClass)
     {
         guiBuilderClass.setComboBox(this.mainWindowFirstTabActionComboBox, new String[] {"Alarm","Open File","Open Folder","Open URL","Shutdown PC"}, new Color(245,245,245,255), new Dimension(120,20), new Point(270,10), "Actions:"+"Alarm - To Just Show A Window With The Message"+"Open - To Open A File Or Folder");
-        guiBuilderClass.setJPanel(mainWindowPage1, new Color(255,255,255,255), this.mainWindowFirstTabActionComboBox);
+        guiBuilderClass.setJPanel(this.mainWindowPage1, new Color(255,255,255,255), this.mainWindowFirstTabActionComboBox);
         mainWindowFirstTabActionComboBox.addActionListener(arg0 ->
         {
             if(this.mainWindowFirstTabActionComboBox.getSelectedIndex() == 0 || this.mainWindowFirstTabActionComboBox.getSelectedIndex() == 4)

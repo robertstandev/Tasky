@@ -82,7 +82,7 @@ public class MainWindowClass extends Tasky
     {
         JTabbedPane tabbedPane = new JTabbedPane();
         tabbedPane.addTab("Table", null, this.mainWindowPage1,"Table");
-        tabbedPane.addTab("Options", null, mainWindowPage2,"Options");
+        tabbedPane.addTab("Options", null, this.mainWindowPage2,"Options");
         this.mainWindowFrame.getContentPane().add(tabbedPane);
     }
 
@@ -225,10 +225,10 @@ public class MainWindowClass extends Tasky
     private void createSecondTabTextBoxes(GUIBuilderClass guiBuilderClass , SaveLoadClass saveLoadClass)
     {
         guiBuilderClass.setTextBox(this.mainWindowSecondTabTablePathSettingTextBoxArea, saveLoadClass.getTableContentsLocation(), new Color(0,0,0,255),new Color(245,245,245,255),true, new Dimension(400,20), new Point(140,25), "Location where the table contents will saved");
-        guiBuilderClass.setJPanel(mainWindowPage2, new Color(255,255,255,255),this.mainWindowSecondTabTablePathSettingTextBoxArea);
+        guiBuilderClass.setJPanel(this.mainWindowPage2, new Color(255,255,255,255),this.mainWindowSecondTabTablePathSettingTextBoxArea);
 
         guiBuilderClass.setTextBox(this.mainWindowSecondTabAlarmAudioPathSettingTextBoxArea, saveLoadClass.getAlarmAudioLocation(), new Color(0,0,0,255),new Color(245,245,245,255),true, new Dimension(400,20), new Point(140,60), "Location where the alarm audio file is");
-        guiBuilderClass.setJPanel(mainWindowPage2, new Color(255,255,255,255),this.mainWindowSecondTabAlarmAudioPathSettingTextBoxArea);
+        guiBuilderClass.setJPanel(this.mainWindowPage2, new Color(255,255,255,255),this.mainWindowSecondTabAlarmAudioPathSettingTextBoxArea);
     }
 
 
@@ -245,7 +245,7 @@ public class MainWindowClass extends Tasky
             }
         });
         guiBuilderClass.setButton(this.mainWindowSecondTabTablePathSettingButton, "Modify Path", new Dimension(120,25),new Point(560,20) , new Color(0,0,0,255), "Modify Table Contents Path");
-        guiBuilderClass.setJPanel(mainWindowPage2, new Color(255,255,255,255),this.mainWindowSecondTabTablePathSettingButton);
+        guiBuilderClass.setJPanel(this.mainWindowPage2, new Color(255,255,255,255),this.mainWindowSecondTabTablePathSettingButton);
 
         this.mainWindowSecondTabAlarmAudioPathSettingButton.addActionListener(arg0 ->
         {
@@ -259,19 +259,19 @@ public class MainWindowClass extends Tasky
             }
         });
         guiBuilderClass.setButton(this.mainWindowSecondTabAlarmAudioPathSettingButton, "Select File", new Dimension(120,25),new Point(560,55) , new Color(0,0,0,255), "Select Alarm Audio Path (.wav)");
-        guiBuilderClass.setJPanel(mainWindowPage2, new Color(255,255,255,255),this.mainWindowSecondTabAlarmAudioPathSettingButton);
+        guiBuilderClass.setJPanel(this.mainWindowPage2, new Color(255,255,255,255),this.mainWindowSecondTabAlarmAudioPathSettingButton);
     }
 
 
     private void createSecondTabCheckBoxes(GUIBuilderClass guiBuilderClass, SaveLoadClass saveLoadClass)
     {
         guiBuilderClass.setCheckBox(this.mainWindowSecondTabTopMostCheckBox, "Application Top Most",new Color(0,0,0,255),new Color(255,255,255,255), new Dimension(180,20), new Point(25,100), "Make the application windows be on top of all other system windows");
-        guiBuilderClass.setJPanel(mainWindowPage2, new Color(255,255,255,255),this.mainWindowSecondTabTopMostCheckBox);
+        guiBuilderClass.setJPanel(this.mainWindowPage2, new Color(255,255,255,255),this.mainWindowSecondTabTopMostCheckBox);
         this.mainWindowSecondTabTopMostCheckBox.setSelected(saveLoadClass.getApplicationTopMost());
         this.mainWindowSecondTabTopMostCheckBox.addActionListener(arg0 -> this.mainWindowFrame.setAlwaysOnTop(this.mainWindowSecondTabTopMostCheckBox.isSelected()));
 
         guiBuilderClass.setCheckBox(this.mainWindowSecondTabAutoRemoveExecutedCheckBox, "Automatically remove items",new Color(0,0,0,255),new Color(255,255,255,255), new Dimension(220,20), new Point(25,125), "After an item is executed if it doesn't have '~' as date , it will be automatically removed from the table");
-        guiBuilderClass.setJPanel(mainWindowPage2, new Color(255,255,255,255),this.mainWindowSecondTabAutoRemoveExecutedCheckBox);
+        guiBuilderClass.setJPanel(this.mainWindowPage2, new Color(255,255,255,255),this.mainWindowSecondTabAutoRemoveExecutedCheckBox);
         this.mainWindowSecondTabAutoRemoveExecutedCheckBox.setSelected(saveLoadClass.getTableAutoRemoveItem());
     }
 
@@ -279,9 +279,9 @@ public class MainWindowClass extends Tasky
     private void createSecondTabLabels(GUIBuilderClass guiBuilderClass)
     {
         guiBuilderClass.setLabel(this.mainWindowSecondTabTablePathSettingLabel, "Table Save Path:", new Font("Arial",Font.PLAIN,12), new Color(0,0,0,255),new Dimension(105,10),new Point(20,30));
-        guiBuilderClass.setJPanel(mainWindowPage2, new Color(255,255,255,255),this.mainWindowSecondTabTablePathSettingLabel);
+        guiBuilderClass.setJPanel(this.mainWindowPage2, new Color(255,255,255,255),this.mainWindowSecondTabTablePathSettingLabel);
 
         guiBuilderClass.setLabel(this.mainWindowSecondTabAlarmAudioPathSettingLabel, "Alarm Audio Path:", new Font("Arial",Font.PLAIN,12), new Color(0,0,0,255),new Dimension(115,10),new Point(20,65));
-        guiBuilderClass.setJPanel(mainWindowPage2, new Color(255,255,255,255),this.mainWindowSecondTabAlarmAudioPathSettingLabel);
+        guiBuilderClass.setJPanel(this.mainWindowPage2, new Color(255,255,255,255),this.mainWindowSecondTabAlarmAudioPathSettingLabel);
     }
 }

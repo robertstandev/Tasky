@@ -7,6 +7,11 @@ import java.awt.*;
  *
  * v 1.0.0
  * -modified 'execute now' code to work for open file/folder/ etc
+ *
+ * TO DO:
+ * -when multiple alarms execute at the same hour :
+ *      stack them in the notification window (save all text messages of alarms in memory and when the user presses X to close the window , change the text if it has more alarms to show , maybe change the color of the notification window for each alarm)
+ *      or show a notification window for each alarm (need to make a different class that does the monitor (taskyActionsTimer from NotificationWindowClass) and make new Notification Window class for each alarm
  */
 
 

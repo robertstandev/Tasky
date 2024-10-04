@@ -5,14 +5,16 @@ import java.util.ArrayList;
 public class SaveLoadClass extends Tasky
 {
     private final String tableContentsLocation;
+    private final boolean tableAutoRemoveItem;
     private final String alarmAudioLocation;
     private final boolean applicationTopMost;
-    private final boolean tableAutoRemoveItem;
+    private final boolean showNotificationWindow;
 
     public String getTableContentsLocation() { return this.tableContentsLocation; }
     public String getAlarmAudioLocation() { return this.alarmAudioLocation; }
     public boolean getApplicationTopMost() { return this.applicationTopMost; }
     public boolean getTableAutoRemoveItem() { return this.tableAutoRemoveItem; }
+    public boolean getShowNotificationWindowSetting() {return this.showNotificationWindow; }
 
     public SaveLoadClass()
     {
@@ -21,6 +23,7 @@ public class SaveLoadClass extends Tasky
         this.alarmAudioLocation = loadData.get(1);
         this.applicationTopMost = Boolean.parseBoolean(loadData.get(2));
         this.tableAutoRemoveItem =  Boolean.parseBoolean(loadData.get(3));
+        this.showNotificationWindow = Boolean.parseBoolean(loadData.get(4));
     }
 
     public String getSettingsFileLocation()
@@ -52,6 +55,8 @@ public class SaveLoadClass extends Tasky
                 writer.write("Application Top Most |true");
                 writer.write(System.getProperty("line.separator"));
                 writer.write("Table Auto Delete Item |true");
+                writer.write(System.getProperty("line.separator"));
+                writer.write("Show Notification Window |true");
                 writer.close();
             }
             catch (Exception e)
@@ -161,16 +166,20 @@ public class SaveLoadClass extends Tasky
         {
             BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
 
-            writer.write("Table Contents Location |" + (mainWindow().getMainWindowSecondTabTablePathSettingTextBoxArea().length() > 0 ? mainWindow().getMainWindowSecondTabTablePathSettingTextBoxArea() : this.tableContentsLocation));
-            writer.write(System.getProperty("line.separator"));
+            writer.write("Table Contents Location |" + (!mainWindow().getMainWindowSecondTabTablePathSettingTextBoxArea().isEmpty() ? mainWindow().getMainWindowSecondTabTablePathSettingTextBoxArea() : this.tableContentsLocation));
 
-            writer.write("Alarm Audio Location |" + (mainWindow().getMainWindowSecondTabAlarmAudioPathSettingTextBoxArea().length() > 0 ? mainWindow().getMainWindowSecondTabAlarmAudioPathSettingTextBoxArea() : this.alarmAudioLocation));
             writer.write(System.getProperty("line.separator"));
+            writer.write("Alarm Audio Location |" + (!mainWindow().getMainWindowSecondTabAlarmAudioPathSettingTextBoxArea().isEmpty() ? mainWindow().getMainWindowSecondTabAlarmAudioPathSettingTextBoxArea() : this.alarmAudioLocation));
 
+            writer.write(System.getProperty("line.separator"));
             writer.write("Application Top Most |" + mainWindow().getMainWindowSecondTabTopMostCheckBox());
-            writer.write(System.getProperty("line.separator"));
 
+            writer.write(System.getProperty("line.separator"));
             writer.write("Table Auto Delete Item |" + mainWindow().getMainWindowSecondTabAutoRemoveExecutedCheckBox());
+
+            writer.write(System.getProperty("line.separator"));
+            writer.write("Show Notification Window |" + mainWindow().getMainWindowSecondTabShowNotificationWindowCheckbox());
+
             writer.close();
         }
         catch (Exception e)

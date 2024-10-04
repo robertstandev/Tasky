@@ -50,6 +50,7 @@ public class MainWindowClass extends Tasky
 
     private final JCheckBox mainWindowSecondTabTopMostCheckBox = new JCheckBox();
     private final JCheckBox mainWindowSecondTabAutoRemoveExecutedCheckBox = new JCheckBox();
+    private final JCheckBox mainWindowSecondTabShowNotificationWindowCheckbox = new JCheckBox();
 
     private final JComboBox<String> mainWindowFirstTabActionComboBox = new JComboBox<>();
 
@@ -74,6 +75,7 @@ public class MainWindowClass extends Tasky
     public String getMainWindowSecondTabTablePathSettingTextBoxArea() { return this.mainWindowSecondTabTablePathSettingTextBoxArea.getText(); }
     public String getMainWindowSecondTabAlarmAudioPathSettingTextBoxArea() { return this.mainWindowSecondTabAlarmAudioPathSettingTextBoxArea.getText(); }
     public Boolean getMainWindowSecondTabAutoRemoveExecutedCheckBox() { return this.mainWindowSecondTabAutoRemoveExecutedCheckBox.isSelected(); }
+    public Boolean getMainWindowSecondTabShowNotificationWindowCheckbox(){return this.mainWindowSecondTabShowNotificationWindowCheckbox.isSelected(); }
     public Boolean getMainWindowSecondTabTopMostCheckBox() { return this.mainWindowSecondTabTopMostCheckBox.isSelected(); }
 
 
@@ -128,7 +130,7 @@ public class MainWindowClass extends Tasky
         //ADD ROW BUTTON
         this.mainWindowAddRowButton.addActionListener(arg0 ->
         {
-            if(this.mainWindowFirstTabDateTextBox.getText().length() > 0 && this.mainWindowFirstTabTimeTextBox.getText().length() > 2 && this.mainWindowFirstTabMessageTextBox.getText().length() > 0)
+            if(!this.mainWindowFirstTabDateTextBox.getText().isEmpty() && this.mainWindowFirstTabTimeTextBox.getText().length() > 2 && !this.mainWindowFirstTabMessageTextBox.getText().isEmpty())
             {
                 this.tableModel.addRow(new Object[0]);
                 this.tableModel.setValueAt(true,this.tableModel.getRowCount() - 1,0);
@@ -273,6 +275,10 @@ public class MainWindowClass extends Tasky
         guiBuilderClass.setCheckBox(this.mainWindowSecondTabAutoRemoveExecutedCheckBox, "Automatically remove items",new Color(0,0,0,255),new Color(255,255,255,255), new Dimension(220,20), new Point(25,125), "After an item is executed if it doesn't have '~' as date , it will be automatically removed from the table");
         guiBuilderClass.setJPanel(this.mainWindowPage2, new Color(255,255,255,255),this.mainWindowSecondTabAutoRemoveExecutedCheckBox);
         this.mainWindowSecondTabAutoRemoveExecutedCheckBox.setSelected(saveLoadClass.getTableAutoRemoveItem());
+
+        guiBuilderClass.setCheckBox(this.mainWindowSecondTabShowNotificationWindowCheckbox, "Show Notification Window",new Color(0,0,0,255),new Color(255,255,255,255), new Dimension(220,20), new Point(25,150), "If enabled shows a notification window when alarm is triggered");
+        guiBuilderClass.setJPanel(this.mainWindowPage2, new Color(255,255,255,255),this.mainWindowSecondTabShowNotificationWindowCheckbox);
+        this.mainWindowSecondTabShowNotificationWindowCheckbox.setSelected(saveLoadClass.getShowNotificationWindowSetting());
     }
 
 

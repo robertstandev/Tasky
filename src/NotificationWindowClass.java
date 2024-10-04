@@ -13,14 +13,13 @@ import java.util.TimerTask;
 
 public class NotificationWindowClass extends Tasky
 {
-
     public NotificationWindowClass(GUIBuilderClass guiBuilderClass, Dimension screenSize)
     {
         guiBuilderClass.setWindowFrame(notificationWindowFrame,"Tasky - Notification Window",true,new Dimension(300,200),new Point(screenSize.width - 300, screenSize.height - 240),new Color(255,255,255,255),1f,false,true,true,true);
         notificationWindowFrame.getContentPane().setLayout(null);
 
         JLabel notificationWindowLabel = new JLabel();
-        guiBuilderClass.setLabel(notificationWindowLabel, "Tasky - Notification", new Font("Arial",Font.BOLD,20), new Color(255,0,0,255), new Dimension(190,20), new Point(70,5));
+        guiBuilderClass.setLabel(notificationWindowLabel, "Tasky - Notification", new Font("Arial",Font.BOLD,20), new Color(255,0,0,255), new Dimension(250,20), new Point(40,5));
         notificationWindowFrame.getContentPane().add(notificationWindowLabel);
 
         guiBuilderClass.setTextBox(notificationWindowMessageTextBox, "Message",new Color(0,0,0,255),new Color(255,255,255,255),false, new Dimension(280,140), new Point(10,10), "Message");
@@ -127,10 +126,13 @@ public class NotificationWindowClass extends Tasky
     {
         playSound();
 
-        notificationWindow().notificationWindowMessageTextBox.setText(mainWindow().getMainWindowTable().getValueAt(row, 4).toString());
-        notificationWindowFrame.setVisible(true);
-        notificationWindow().notificationWindowMessageTextBox.revalidate();
-        notificationWindow().notificationWindowMessageTextBox.repaint();
+        if(mainWindow().getMainWindowSecondTabShowNotificationWindowCheckbox())
+        {
+            notificationWindow().notificationWindowMessageTextBox.setText(mainWindow().getMainWindowTable().getValueAt(row, 4).toString());
+            notificationWindowFrame.setVisible(true);
+            notificationWindow().notificationWindowMessageTextBox.revalidate();
+            notificationWindow().notificationWindowMessageTextBox.repaint();
+        }
     }
 
     public static void playSound()
